@@ -2,14 +2,13 @@
 <!-- PROJECT LOGO -->
 <div align="center"><br />
 <p align="center" style="width: 100%">
-    <img src="https://minerva.vn/wp-content/uploads/2020/06/logo.png" alt="Logo" style="-webkit-user-select: none;margin: auto;">
 
-<h3 align="center">Notification System</h3>
+<h2 align="center">Notification System</h2>
 </p>
 </div>
 
 
-Notification System for SCB platform. Base from FastAPI
+Notification System. Base from FastAPI
 
 ## I. Requirements:
     - Python >= 3.9
