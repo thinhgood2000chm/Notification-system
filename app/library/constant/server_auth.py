@@ -1,0 +1,21 @@
+import os
+
+from dotenv import load_dotenv
+from app.library.constant.system_type import SYSTEM_TYPE_CRM, SYSTEM_TYPE_LOS, SYSTEM_TYPE_HRM, SYSTEM_TYPE_OFFICE
+load_dotenv()
+
+SERVER_AUTH_CRM = os.getenv("SERVER_AUTH_CRM")
+SERVER_AUTH_LOS = os.getenv("SERVER_AUTH_LOS", None)
+SERVER_AUTH_HRM = os.getenv("SERVER_AUTH_HRM", None)
+SERVER_AUTH_OFFICE = os.getenv("SERVER_AUTH_OFFICE", None)
+
+SERVER_AUTH_TYPE = {
+    SERVER_AUTH_CRM: SYSTEM_TYPE_CRM,
+    SERVER_AUTH_LOS: SYSTEM_TYPE_LOS,
+    SERVER_AUTH_HRM: SYSTEM_TYPE_HRM,
+    SERVER_AUTH_OFFICE: SYSTEM_TYPE_OFFICE,
+}
+
+
+
+

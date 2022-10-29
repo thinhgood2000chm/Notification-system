@@ -1,0 +1,3 @@
+DATETIME_FORMAT = '%d/%m/%Y %H:%M:%S'
+
+PAGING_LIMIT = 10
