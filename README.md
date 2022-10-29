@@ -17,7 +17,7 @@ Notification System. Base from FastAPI
 
 ## II. Setup environment:
 - How to set up environment:
-    1. Install [redis](https://redis.io/docs/getting-started/installation/install-redis-on-linux/)
+    1. Install [redis](https://redis.io/docs/getting-started/installation/install-redis-on-linux/), [python](https://www.python.org/downloads/release/python-3910/)
     2. Setup Python virtual environment:
         For Linux:
         ```sh
