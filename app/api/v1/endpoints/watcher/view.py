@@ -58,7 +58,7 @@ async def create_watcher(
     status_code=HTTP_201_CREATED,
     responses=open_api_standard_responses(
         success_status_code=HTTP_201_CREATED,
-        success_response_model=ResponseData[list[WatcherResponseSchema]],
+        success_response_model=ResponseData[List[WatcherResponseSchema]],
         fail_response_model=FailResponse),
 )
 async def create_multi_watcher(
@@ -193,7 +193,7 @@ async def generate_token(
     status_code=HTTP_200_OK,
     responses=open_api_standard_responses(
         success_status_code=HTTP_200_OK,
-        success_response_model=ResponseData[list[WatcherResponseSchema]],
+        success_response_model=ResponseData[List[WatcherResponseSchema]],
         fail_response_model=FailResponse),
 )
 async def get_all_watchers_of_group(

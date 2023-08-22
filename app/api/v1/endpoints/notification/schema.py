@@ -1,3 +1,5 @@
+from typing import List
+
 from bson import ObjectId
 from pydantic import BaseModel, Field
 
@@ -26,7 +28,7 @@ class NotificationResponse(Base):
 class CreateNotificationResponse(Base):
     id: PyObjectId = Field(..., alias="_id")
     content: str = Field(..., nullable=True, description='Nội dung activity')
-    watcher_noti_status: list[WatcherStatus] = Field(..., description='id của watcher và trạng thái của noti')
+    watcher_noti_status: List[WatcherStatus] = Field(..., description='id của watcher và trạng thái của noti')
     watcher_created_activity_document: WatcherDocument = Field(None, description='Thông tin người tạo')
 
     class Config:

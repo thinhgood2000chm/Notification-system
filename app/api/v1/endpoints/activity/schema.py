@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from typing import Optional
+from typing import Optional, List
 
 from bson import ObjectId
 from pydantic import BaseModel, Field, HttpUrl
@@ -31,7 +31,7 @@ class ActivityResponse(Base):
 
 class ActivityByDayResponse(BaseModel):
     created_day: date = Field(..., example='dd/mm/YYYY', description='Thời gian khởi tạo')
-    activities: list[ActivityResponse]
+    activities: List[ActivityResponse]
 
     class Config:
         json_encoders = {

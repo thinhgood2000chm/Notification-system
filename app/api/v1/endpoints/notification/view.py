@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import List
 
 from aioredis import Redis
 from fastapi import APIRouter, Depends, Path, Query
@@ -31,7 +32,7 @@ router = APIRouter()
     status_code=HTTP_200_OK,
     responses=open_api_standard_responses(
         success_status_code=HTTP_200_OK,
-        success_response_model=ResponseData[list[NotificationResponse]],
+        success_response_model=ResponseData[List[NotificationResponse]],
         fail_response_model=FailResponse
     )
 )
@@ -81,7 +82,7 @@ async def get_all_notification_of_watcher(
             notification['watcher_document'][0] if notification['watcher_document'] else None
         notification['watcher_noti_status'] = \
             notification['watcher_noti_status'][0] if notification['watcher_noti_status'] else None
-    return ResponseData[list[NotificationResponse]](**{"data": list_notification})
+    return ResponseData[List[NotificationResponse]](**{"data": list_notification})
 
 
 @router.patch(

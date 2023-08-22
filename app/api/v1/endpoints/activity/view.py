@@ -1,5 +1,6 @@
 import re
 from datetime import datetime
+from typing import List
 
 from aioredis import Redis
 from fastapi import APIRouter, Depends, File, Form, Path, Query, UploadFile
@@ -206,7 +207,7 @@ async def create_new_activity(
     status_code=HTTP_200_OK,
     responses=open_api_standard_responses(
         success_status_code=HTTP_200_OK,
-        success_response_model=ResponseData[list[ActivityByDayResponse]],
+        success_response_model=ResponseData[List[ActivityByDayResponse]],
         fail_response_model=FailResponse
     )
 )

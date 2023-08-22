@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: noti-deployment
+  namespace: hcm-oc
+  labels:
+    app: noti-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: noti-deployment
+  template:
+    metadata:
+      labels:
+        app: noti-deployment
+    spec:
+      containers:
+        - name: noti-deployment
+          image: thinhnx75/noti-deployment
+          ports:
+            - containerPort: 7777
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: noti-service
+  namespace: demo
+spec:
+  selector:
+    app: noti-deployment
+  ports:
+    - protocol: TCP
+      port: 7777
+      targetPort: 7777
