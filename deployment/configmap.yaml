@@ -20,7 +20,7 @@ data:
   # DATABASE
   MONGO_DB_USER: root
   MONGO_DB_PASSWORD: "12345"
-  MONGO_DB_HOST: mongo-service
+  MONGO_DB_HOST: mongodb-service
   MONGO_DB_PORT: "27017"
   MONGO_DB_AUTH_MECHANISM: DEFAULT
   MONGO_DB_NAME: noti
@@ -28,3 +28,7 @@ data:
   
   # SERVICE FILE URL
   SERVICE_FILE_URL: 192.168.73.135
+
+  # redis
+  HOST_REDIS: redis-service
+  PASSWORD_REDIS: "1234"
