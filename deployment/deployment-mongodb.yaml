@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+  namespace: hcm-oc
+  labels:
+    app: mongodb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb-deployment
+  template:
+    metadata:
+      labels:
+        app: mongodb-deployment
+    spec:
+      containers:
+        - name: mongo
+          image: bitnami/mongodb:latest
+          ports:
+            - containerPort: 27017
+          envFrom:
+            - configMapRef:
+                name: data-env
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+  namespace: hcm-oc
+spec:
+  selector:
+    app: mongodb-deployment
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017

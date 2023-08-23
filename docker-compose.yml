@@ -16,9 +16,6 @@ services:
     volumes:
       - .:/app
   noti-docker:
-#    build:
-#      dockerfile: Dockerfile
-#      context: .
     image: thinhnx75/noti-docker
     env_file:
       - .env

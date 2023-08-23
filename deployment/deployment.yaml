@@ -6,7 +6,7 @@ metadata:
   labels:
     app: noti-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: noti-deployment
@@ -17,15 +17,18 @@ spec:
     spec:
       containers:
         - name: noti-deployment
-          image: thinhnx75/noti-deployment
+          image: thinhnx75/noti-docker:latest
           ports:
             - containerPort: 7777
+          envFrom:
+            - configMapRef:
+                name: data-env
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: noti-service
-  namespace: demo
+  namespace: hcm-oc
 spec:
   selector:
     app: noti-deployment
