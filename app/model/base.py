@@ -11,21 +11,20 @@ from pydantic.generics import GenericModel
 from app.library.function import datetime_to_str
 
 load_dotenv()
-
-# MONGO_DETAILS = \
-#     f"mongodb+srv://{os.getenv('USERNAME_DB')}:{os.getenv('PASSWORD_DB')}@cluster0.gc4d8sf.mongodb.net/?retryWrites=true&w=majority"
-# print(MONGO_DETAILS)
-# client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
-# db = client.college
-# print(db)
-
-
 MONGO_DETAILS = \
-    f"mongodb://{os.getenv('MONGO_DB_USER')}:{os.getenv('MONGO_DB_PASSWORD')}@{os.getenv('MONGO_DB_HOST')}:{os.getenv('MONGO_DB_PORT')}/{os.getenv('MONGO_DB_NAME')}"
+    f"mongodb+srv://{os.getenv('USERNAME_DB')}:{os.getenv('PASSWORD_DB')}@cluster0.gc4d8sf.mongodb.net/?retryWrites=true&w=majority"
 print(MONGO_DETAILS)
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
-print(client)
-db = client['noti']
+db = client.college
+print(db)
+
+## sử dụng cho kubenet và openshift
+# MONGO_DETAILS = \
+#     f"mongodb://{os.getenv('MONGO_DB_USER')}:{os.getenv('MONGO_DB_PASSWORD')}@{os.getenv('MONGO_DB_HOST')}:{os.getenv('MONGO_DB_PORT')}/{os.getenv('MONGO_DB_NAME')}"
+# print(MONGO_DETAILS)
+# client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
+# print(client)
+# db = client['noti']
 print(db)
 TypeX = TypeVar("TypeX")
 
