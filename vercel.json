@@ -1,12 +1,12 @@
 {
 	"version": 2,
-	"public": false,
+	"public": true,
 	"builds": [{ "src": "app/main.py", "use": "@vercel/python" }],
 	"routes": [
 		{ "src": "/", "dest": "app/main.py"},
 		{ "src": "/docs", "dest":"app/main.py"},
 		{ "src": "/redoc", "dest":"app/main.py"},
 		{ "src": "/openapi.json", "dest": "app/main.py"},
-		{ "src": "/api/*", "dest": "app/main.py"}
+		{ "src": "/api/v1/watcher/generate-token/", "dest": "app/main.py"}
 	]
 }
